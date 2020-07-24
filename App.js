@@ -43,7 +43,8 @@
 import React from "react";
 // import { View, Text } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import HomeScreen from "./screens/HomeScreen"
+import HomeScreen from "./screens/HomeScreen";
+import LoginScreen from "./screens/LoginScreen";
 
 // class HomeScreen extends React.Component {
 //   render() {
@@ -55,11 +56,15 @@ import HomeScreen from "./screens/HomeScreen"
 //   }
 // }
 
-const AppNavigator = createStackNavigator({
-  Home: { 
-    screen: HomeScreen
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Login: LoginScreen
+  },
+  {
+    initialRouteName: "Login"
   }
-});
+);
 
 const App = createAppContainer(AppNavigator)
 
