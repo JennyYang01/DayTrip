@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 
 class LoginScreen extends Component {
+    static navigationOptions = {
+        header: null,
+    };
+
     state={
         email:"",
         password:""
-    }
+    };
 
     render() {
         return (
             <View style={styles.container}>
-                <Text>DayTrip</Text>
+                <Text style={styles.logo}>DayTrip</Text>
                 <TextInput  
                     style={styles.inputText}
                     placeholder="Email" 
@@ -21,10 +25,9 @@ class LoginScreen extends Component {
                     placeholder="Password" 
                     placeholderTextColor="#003f5c"
                     onChangeText={text => this.setState({email:text})}/>
-                <Button
-                    onPress={() => this.props.navigation.navigate('Home')}
-                    title="Log In"
-                />
+                <TouchableOpacity style={styles.loginBtn} onPress={() => this.props.navigation.navigate('Home')}>
+                    <Text>Log In</Text>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -37,6 +40,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+    logo: {
+        fontWeight:"bold",
+        fontSize:50,
+        color:"#fb5b5a",
+        marginBottom:40
+    },
     inputText: {
         width:"80%",
         backgroundColor:"#465881",
@@ -46,5 +55,15 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         padding:20,
         color:"white"
-    }
+    },
+    loginBtn:{
+        width:"80%",
+        backgroundColor:"#fb5b5a",
+        borderRadius:25,
+        height:50,
+        alignItems:"center",
+        justifyContent:"center",
+        marginTop:20,
+        marginBottom:10
+    },
 });
