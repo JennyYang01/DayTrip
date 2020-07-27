@@ -28,7 +28,7 @@ class LoginScreen extends Component {
                     onChangeText={text => this.setState({password:text})}/>
                 <Button type='primary' title='LOGIN' onPress={() => this.props.navigation.navigate('Home')} style={{ width:'80%' }}/>
                 <Button type='tertiary' title='Forgot your password?' style={{ width:'80%', marginBottom: 40 }}/>
-                <Button type='tertiary' title='Signup' style={{ width:'80%' }}/>
+                <Button type='tertiary' title='Signup'  onPress={() => this.props.navigation.navigate('Signup')} style={{ width:'80%' }}/>
             </View>
         );
     }

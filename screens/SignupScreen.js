@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import Button from '../components/Button';
 
-class LoginScreen extends Component {
+class SignupScreen extends Component {
     static navigationOptions = {
         header: null,
     };
@@ -32,14 +32,14 @@ class LoginScreen extends Component {
                     placeholderTextColor="#003f5c"
                     onChangeText={text => this.setState({password:text})}/>
                 <Button type='primary' title='SIGN UP' onPress={() => this.props.navigation.navigate('Home')} style={{ width:'80%' }}/>
-                <View>
-                    <Text>Already have an account? </Text><Button type='tertiary' title='Log In' onPress={() => this.props.navigation.navigate('Login')} style={{ width:'80%', marginBottom: 40 }}/>
+                <View style={{flexDirection: 'row'}}>
+                    <Text>Already have an account? </Text><Button type='tertiary' title='Log In' onPress={() => this.props.navigation.navigate('Login')}/>
                 </View>
             </View>
         );
     }
 }
-export default LoginScreen;
+export default SignupScreen;
 
 const styles = StyleSheet.create({
     container: {
