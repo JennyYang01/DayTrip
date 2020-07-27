@@ -11,7 +11,7 @@ const buttonType = (title, type, onPress) => {
         ),
         primary: (
             <TouchableOpacity onPress={onPress} style={styles.primary}>
-                <Text>{title}</Text>
+                <Text style={styles.primaryText}>{title}</Text>
             </TouchableOpacity>
         )
     }
@@ -20,7 +20,7 @@ const buttonType = (title, type, onPress) => {
 
 const Button = ({type, title, onPress, style, ...props}) => {
     return (
-        <View style={{ width:'80%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', ...style }} {...props}>
+        <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', ...style }} {...props}>
             {buttonType(title, type, onPress)}
         </View>
     )
@@ -35,6 +35,10 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         marginBottom:10
+    },
+    primaryText: {
+        marginHorizontal: 30,
+        color: "white"
     },
     tertiary:{
         color:"gray"
