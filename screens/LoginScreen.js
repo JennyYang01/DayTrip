@@ -26,15 +26,9 @@ class LoginScreen extends Component {
                     placeholder="Password" 
                     placeholderTextColor="#003f5c"
                     onChangeText={text => this.setState({password:text})}/>
-                <TouchableOpacity style={styles.loginBtn} onPress={() => this.props.navigation.navigate('Home')}>
-                    <Text>LOGIN</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={{...styles.buttonText, marginBottom: 40}}>Forgot your password?</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text style={styles.buttonText}>Signup</Text>
-                </TouchableOpacity>
+                <Button type='primary' title='LOGIN' onPress={() => this.props.navigation.navigate('Home')}/>
+                <Button type='tertiary' title='Forgot your password?' style={{ marginBottom: 40 }}/>
+                <Button type='tertiary' title='Signup'/>
             </View>
         );
     }
@@ -62,17 +56,5 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         padding:20,
         color:"white"
-    },
-    loginBtn:{
-        width:"80%",
-        backgroundColor:"#fb5b5a",
-        borderRadius:25,
-        height:50,
-        alignItems:"center",
-        justifyContent:"center",
-        marginBottom:10
-    },
-    buttonText:{
-      color:"gray"
     }
 });

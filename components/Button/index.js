@@ -18,9 +18,9 @@ const buttonType = (title, type, onPress) => {
     return (button[type])
 };
 
-const Button = ({type, title, onPress, ...props}) => {
+const Button = ({type, title, onPress, style, ...props}) => {
     return (
-        <View {...props}>
+        <View style={{ width:'80%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', ...style }} {...props}>
             {buttonType(title, type, onPress)}
         </View>
     )
@@ -28,7 +28,7 @@ const Button = ({type, title, onPress, ...props}) => {
 
 const styles = StyleSheet.create({
     primary:{
-        width:"80%",
+        width:"100%",
         backgroundColor:"#fb5b5a",
         borderRadius:25,
         height:50,
