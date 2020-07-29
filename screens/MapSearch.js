@@ -5,7 +5,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 class MapSearch extends React.Component{
     render() {
         return (
-        <GooglePlacesAutocomplete
+          <GooglePlacesAutocomplete
             placeholder='Search'
             minLength={2} // minimum length of text to search
             autoFocus={false}

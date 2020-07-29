@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const buttonType = (title, type, onPress) => {
     const button = {
@@ -18,7 +18,7 @@ const buttonType = (title, type, onPress) => {
     return (button[type])
 };
 
-const Button = ({type, title, onPress, style, ...props}) => {
+const Button = ({type, title, onPress, style, disabled, ...props}) => {
     return (
         <View style={{ flexDirection: 'column', alignItems: 'center', justifyContent: 'center', ...style }} {...props}>
             {buttonType(title, type, onPress)}
@@ -38,15 +38,28 @@ const styles = StyleSheet.create({
     },
     primaryText: {
         marginHorizontal: 30,
-        color: "white"
+        color: "white",
+        fontWeight:  "bold"
     },
     tertiary:{
-        color:"gray"
+        color:"gray",
     }
 });
 
-// Button.propTypes = (
-//     type: PropTypes.oneOf(['tertiary, primary'])
-// )
+Button.propTypes = {
+    type: PropTypes.oneOf(['tertiary', 'primary']),
+    title: PropTypes.string,
+    onPress: PropTypes.func,
+    style: PropTypes.object,
+    disabled: PropTypes.bool
+}
+
+Button.defaultProps = {
+    type: 'primary',
+    title: '',
+    onPress: null,
+    style: null,
+    disabled: true
+}
 
 export default Button
