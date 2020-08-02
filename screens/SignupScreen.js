@@ -28,14 +28,13 @@ class SignupScreen extends Component {
                         placeholderTextColor="#003f5c"
                         onChangeText={text => this.setState({password:text})}
                     />
-                    <FormTextInput  
-                        style={styles.inputText}
+                    <FormTextInput
                         placeholder="Confirm Password" 
                         placeholderTextColor="#003f5c"
                         onChangeText={text => this.setState({password:text})}
                     />
+                    <Button type='primary' title='SIGN UP' onPress={() => this.props.navigation.navigate('Home')}/>
                 </View>
-                <Button type='primary' title='SIGN UP' onPress={() => this.props.navigation.navigate('Home')} style={{ width:'80%' }}/>
                 <View style={{flexDirection: 'row'}}>
                     <Text>Already have an account? </Text><Button type='tertiary' title='Log In' onPress={() => this.props.navigation.navigate('Login')}/>
                 </View>

@@ -28,10 +28,10 @@ class LoginScreen extends Component {
                         placeholderTextColor="#003f5c"
                         onChangeText={text => this.setState({password:text})}
                     />
+                    <Button type='primary' title='LOGIN' onPress={() => this.props.navigation.navigate('Home')}/>
+                    <Button type='tertiary' title='Forgot your password?' style={{ marginBottom: 40 }}/>
+                    <Button type='tertiary' title='Signup'  onPress={() => this.props.navigation.navigate('Signup')}/>
                 </View>
-                <Button type='primary' title='LOGIN' onPress={() => this.props.navigation.navigate('Home')} style={{ width:'80%' }}/>
-                <Button type='tertiary' title='Forgot your password?' style={{ width:'80%', marginBottom: 40 }}/>
-                <Button type='tertiary' title='Signup'  onPress={() => this.props.navigation.navigate('Signup')} style={{ width:'80%' }}/>
             </View>
         );
     }
