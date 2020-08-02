@@ -2,15 +2,25 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
-const FormTextInput = ({style, ...props}) => {
+const FormTextInput = ({style, placeholder, ...props}) => {
     return (
         <TextInput  
             style={{...styles.inputText, ...style}}
-            placeholder="Email" 
+            placeholder={placeholder}
             placeholderTextColor="#003f5c"
-            onChangeText={text => this.setState({email:text})}
+            {...props}
         />
     );
+}
+
+Button.propTypes = {
+    style: PropTypes.object,
+    placeholder: PropTypes.string
+}
+
+Button.defaultProps = {
+    style: null,
+    placeholder: ''
 }
 
 const styles = StyleSheet.create({
