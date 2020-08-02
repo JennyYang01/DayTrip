@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { TextInput, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
 const FormTextInput = ({style, placeholder, ...props}) => {
@@ -13,12 +13,12 @@ const FormTextInput = ({style, placeholder, ...props}) => {
     );
 }
 
-Button.propTypes = {
+FormTextInput.propTypes = {
     style: PropTypes.object,
     placeholder: PropTypes.string
 }
 
-Button.defaultProps = {
+FormTextInput.defaultProps = {
     style: null,
     placeholder: ''
 }

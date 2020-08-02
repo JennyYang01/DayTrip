@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import Button from '../components/Button';
+import FormTextInput from '../components/FormTextInput';
 
 class LoginScreen extends Component {
     static navigationOptions = {
@@ -16,16 +17,18 @@ class LoginScreen extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.logo}>DayTrip</Text>
-                <TextInput  
-                    style={styles.inputText}
-                    placeholder="Email" 
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => this.setState({email:text})}/>
-                <TextInput  
-                    style={styles.inputText}
-                    placeholder="Password" 
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => this.setState({password:text})}/>
+                <View style={{ width: "80%" }}>
+                    <FormTextInput
+                        placeholder="Email" 
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => this.setState({email:text})}
+                    />
+                    <FormTextInput
+                        placeholder="Email" 
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => this.setState({password:text})}
+                    />
+                </View>
                 <Button type='primary' title='LOGIN' onPress={() => this.props.navigation.navigate('Home')} style={{ width:'80%' }}/>
                 <Button type='tertiary' title='Forgot your password?' style={{ width:'80%', marginBottom: 40 }}/>
                 <Button type='tertiary' title='Signup'  onPress={() => this.props.navigation.navigate('Signup')} style={{ width:'80%' }}/>

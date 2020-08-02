@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Button from '../components/Button';
+import FormTextInput from '../components/FormTextInput';
 
 class SignupScreen extends Component {
     static navigationOptions = {
@@ -16,21 +17,24 @@ class SignupScreen extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.logo}>DayTrip</Text>
-                <TextInput  
-                    style={styles.inputText}
-                    placeholder="Email" 
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => this.setState({email:text})}/>
-                <TextInput  
-                    style={styles.inputText}
-                    placeholder="Password" 
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => this.setState({password:text})}/>
-                <TextInput  
-                    style={styles.inputText}
-                    placeholder="Confirm Password" 
-                    placeholderTextColor="#003f5c"
-                    onChangeText={text => this.setState({password:text})}/>
+                <View style={{ width: "80%" }}>
+                    <FormTextInput
+                        placeholder="Email" 
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => this.setState({email:text})}
+                    />
+                    <FormTextInput
+                        placeholder="Email" 
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => this.setState({password:text})}
+                    />
+                    <FormTextInput  
+                        style={styles.inputText}
+                        placeholder="Confirm Password" 
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => this.setState({password:text})}
+                    />
+                </View>
                 <Button type='primary' title='SIGN UP' onPress={() => this.props.navigation.navigate('Home')} style={{ width:'80%' }}/>
                 <View style={{flexDirection: 'row'}}>
                     <Text>Already have an account? </Text><Button type='tertiary' title='Log In' onPress={() => this.props.navigation.navigate('Login')}/>
