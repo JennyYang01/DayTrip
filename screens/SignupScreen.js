@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Button from '../components/Button';
 import FormTextInput from '../components/FormTextInput';
-import { SQLite } from "expo-sqlite";
-
-const db = SQLite.openDatabase("userData");
 
 class SignupScreen extends Component {
     static navigationOptions = {
