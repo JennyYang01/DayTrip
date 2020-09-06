@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import Button from '../components/Button';
 import FormTextInput from '../components/FormTextInput';
+import db from '../db';
 
 class LoginScreen extends Component {
     static navigationOptions = {
